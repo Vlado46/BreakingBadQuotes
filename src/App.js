@@ -1,13 +1,16 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import "./App.css";
 import Home from "./components/Home";
+import RandomQuote from "./components/RandomQuote";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="App">
-      <Home />
-      <Button>Get Random Quote</Button>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/random" element={<RandomQuote />} />
+      </Routes>
     </div>
   );
 };

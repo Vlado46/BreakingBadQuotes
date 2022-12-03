@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "./Table";
+import "./Home.css";
 import * as ReactBootStrap from "react-bootstrap";
 
 const Home = (props) => {
@@ -21,6 +22,9 @@ const Home = (props) => {
           author={props.data}
         ></Table>
       </ReactBootStrap.Table>
+      <ReactBootStrap.Button href="/random">
+        Get Random Quote
+      </ReactBootStrap.Button>
     </div>
   );
 };
