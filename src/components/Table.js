@@ -11,11 +11,13 @@ const Table = () => {
 
   const data = tableData.map((tableData, index) => {
     return (
-      <tbody>
-        <tr key={index}>
-          <th>{index + 1}</th>
-          <th colSpan={2}>{tableData.quote}</th>
-          <th>{tableData.author}</th>
+      <tbody key={Math.random()}>
+        <tr key={Math.random()}>
+          <th key={Math.random()}>{index + 1}</th>
+          <th key={Math.random()} colSpan={2}>
+            {tableData.quote}
+          </th>
+          <th key={Math.random()}>{tableData.author}</th>
         </tr>
       </tbody>
     );
