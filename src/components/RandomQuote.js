@@ -1,31 +1,40 @@
 import React, { useState, useEffect } from "react";
+import "./RandomQuote.css";
 import * as ReactBootStrap from "react-bootstrap";
 
 const RandomQuote = () => {
   const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
 
   useEffect(() => {
     fetch("https://api.breakingbadquotes.xyz/v1/quotes")
-      .then((data) => data.json())
-      .then((data) => setQuote(data));
+      .then((res) => res.json())
+      .then((quote) => {
+        setQuote(quote[0].quote);
+        setAuthor(quote[0].author);
+        console.log(quote);
+      });
   }, []);
 
   let fetchNewQuote = () => {
     fetch("https://api.breakingbadquotes.xyz/v1/quotes")
-      .then((data) => data.json())
-      .then((data) => setQuote(data));
+      .then((res) => res.json())
+      .then((quote) => {
+        setQuote(quote[0].quote);
+        setAuthor(quote[0].author);
+      });
   };
 
   return (
-    <div className="App">
-      <div className="quote" key="index">
-        <h2>{quote[0].quote}</h2>
-        <small>-{quote[0].author}-</small>
+    <div className="container">
+      <div className="quote">
+        <h2>{quote}</h2>
+        <h4>-{author}-</h4>
       </div>
       <br />
-      <button className="btn" onClick={fetchNewQuote}>
+      <ReactBootStrap.Button className="btn" onClick={fetchNewQuote}>
         Generate New Quote
-      </button>
+      </ReactBootStrap.Button>
       <ReactBootStrap.Button href="/">Back</ReactBootStrap.Button>
     </div>
   );
