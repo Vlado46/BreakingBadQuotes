@@ -16,10 +16,10 @@ const Home = (props) => {
           </tr>
         </thead>
         <Table
-          key={props.data}
-          id={props.data}
-          quote={props.data}
-          author={props.data}
+          key={props.key}
+          id={props.id}
+          quote={props.quote}
+          author={props.author}
         ></Table>
       </ReactBootStrap.Table>
       <ReactBootStrap.Button href="/random">
