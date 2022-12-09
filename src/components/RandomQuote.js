@@ -16,7 +16,7 @@ const RandomQuote = () => {
       });
   }, []);
 
-  let fetchNewQuote = () => {
+  const fetchNewQuote = () => {
     fetch("https://api.breakingbadquotes.xyz/v1/quotes")
       .then((res) => res.json())
       .then((quote) => {
