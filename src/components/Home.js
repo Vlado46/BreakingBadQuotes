@@ -15,12 +15,7 @@ const Home = (props) => {
             <th>Author</th>
           </tr>
         </thead>
-        <Table
-          key={props.key}
-          id={props.id}
-          quote={props.quote}
-          author={props.author}
-        ></Table>
+        <Table />
       </ReactBootStrap.Table>
       <ReactBootStrap.Button href="/random">
         Get Random Quote
